@@ -1,0 +1,11 @@
+.footer {
+    padding: calcRem(40px) 0;
+    background: $grey-dark;
+    
+    p {
+        color: $white;
+        font-family: "open sans", "sans-serif";
+        font-size: calcRem(12px);
+        text-align: center;
+    }
+}

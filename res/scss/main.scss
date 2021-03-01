@@ -1,0 +1,32 @@
+// sass res/scss/main.scss res/css/style.css --watch
+
+// abstract
+@import "abstracts/variables";
+@import "abstracts/functions";
+@import "abstracts/mixins";
+
+// base
+@import "base/typography";
+@import "base/reset";
+
+// layout
+@import "layout/layout";
+@import "layout/header";
+@import "layout/nav";
+@import "layout/footer";
+
+// components
+@import "components/btn";
+
+// pages
+@import "pages/home";
+@import "pages/banner";
+@import "pages/featured";
+@import "pages/callToAction";
+@import "pages/about";
+@import "pages/callToAction2";
+@import "pages/team";
+@import "pages/connect";
+@import "pages/stories";
+@import "pages/news";
+@import "pages/contact";

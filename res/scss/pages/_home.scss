@@ -1,0 +1,21 @@
+.title {
+    margin-bottom: calcRem(10px);
+    font-size: calcRem(35px);
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+    
+    @include desktop {
+        font-size: calcRem(45px);
+    }
+}
+
+.sub-title {
+    margin-bottom: calcRem(50px);
+    font-size: calcRem(14px);
+    text-align: center;
+    
+    @include desktop {
+        font-size: calcRem(18px);
+    }
+}

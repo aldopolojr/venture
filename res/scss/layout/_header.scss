@@ -1,0 +1,98 @@
+// HEADER
+.header {
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
+    position: sticky;
+    top: 0;
+    padding: calcRem(15px) 0;
+    background: $black;
+    color: $white;
+    z-index: 1;
+    
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .logo {
+        font-size: calcRem(18px);
+        text-transform: uppercase;
+        @include transition(color 0.1s ease-in-out);
+        
+        &:hover {
+            color: $grey-dark;
+        }
+    }
+    
+    .menu-toggle {
+        font-size: calcRem(18px);
+        cursor: pointer;
+        @include transition(color 0.1s ease-in-out);
+        
+        &:hover {
+            color: $grey-dark;
+        }
+    }
+    
+    .slogan, .social {
+        display: none;
+    }
+    
+    // TABLET
+    @include tablet {
+        position: static;
+        
+        .container {
+            justify-content: flex-start;
+            align-items: baseline;
+        }
+        
+        .logo {
+            font-size: calcRem(35px);
+            
+            &:hover {
+                color: $white;
+            }
+        }
+        
+        .menu-toggle {
+            display: none;
+        }
+        
+        .slogan {
+            display: block;
+            margin-left: calcRem(10px);
+            color: $accent;
+            font-size: calcRem(17px);
+            text-transform: capitalize;
+        }
+        
+        .social {
+            display: block;
+            margin-left: auto;
+            
+            a {
+                display: inline-block;
+                margin-left: calcRem(10px);
+                padding: calcRem(5px);
+                width: 35px;
+                font-size: calcRem(17px);
+                text-align: center;
+                border-radius: 50%;
+                
+                &:hover {
+                    background: $grey-dark;
+                }
+            }
+        }
+    }
+    
+    // DESKTOP
+    @include desktop {
+        .logo {
+            font-size: calcRem(45px);
+        }
+    }
+}

@@ -1,0 +1,29 @@
+.callToAction2 {
+    padding: calcRem(40px) 0;
+    background: $grey-dark;
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    p {
+        margin-bottom: calcRem(20px);
+        color: $white;
+        font-size: calcRem(22px);
+        text-align: center;
+    }
+    
+    @include desktop {
+        .container {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        
+        p {
+            margin: 0;
+            font-size: calcRem(28px);
+        }
+    }
+}

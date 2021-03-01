@@ -1,0 +1,16 @@
+.container {
+    margin: 0 calcRem(20px);
+    
+    @include tablet {
+        margin: 0 calcRem(30px);
+    }
+    
+    @include desktop-md {
+        margin: 0 auto;
+        width: 1140px;
+    }
+}
+
+section {
+    padding: calcRem(100px) 0;
+}

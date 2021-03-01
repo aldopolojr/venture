@@ -1,0 +1,109 @@
+// NAVIGATION
+.nav {
+    position: absolute;
+    display: none;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: calcRem(15px) 0;
+    width: 200px;
+//    min-height: 100vh;
+//    height: 100%;
+    background: $black;
+    color: $white;
+    z-index: 2;
+    transform: translateX(200px);
+    @include transition(transform 0.25s ease-in-out);
+    
+    .container {
+        position: -webkit-sticky;
+        position: -moz-sticky;
+        position: -ms-sticky;
+        position: -o-sticky;
+        position: sticky;
+        top: 15px;
+    }
+    
+    @include tablet {
+        position: -webkit-sticky;
+        position: -moz-sticky;
+        position: -ms-sticky;
+        position: -o-sticky;
+        position: sticky;
+        display: block;
+        width: 100%;
+        min-height: 0;
+        height: auto;
+        transform: translateX(0);
+        
+        .container {
+            display: flex;
+        }
+        
+        .menu-group {
+            position: relative;
+        }
+    }
+}
+
+body.open .nav {
+    display: block;
+}
+
+// NAVIGATION A
+.nav .menu-group > a {
+    display: inline-block;
+    padding: calcRem(5px) calcRem(5px) calcRem(10px);
+    
+    &:hover {
+        padding: calcRem(5px);
+        border-bottom: 5px solid $grey-dark;
+    }
+    
+    &.active {
+        padding: calcRem(5px);
+        border-bottom: 5px solid $accent;
+    }
+    
+    @include tablet {
+        margin-right: calcRem(20px);
+    }
+}
+
+// SUB MENU
+.sub-menu {
+    @include tablet {
+        position: absolute;
+        top: 40px;
+        left: 0;
+        margin-left: calcRem(-20px);
+        padding: calcRem(10px) 0;
+        width: 175px;
+        background: $black;
+        z-index: 3;
+        opacity: 0;
+        visibility: hidden;
+        @include transition(opacity 0.1s ease-in-out);
+    }
+}
+
+.menu-group:hover .sub-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+// SUB MENU A
+.sub-menu a {
+    display: inline-block;
+    padding: calcRem(5px) calcRem(20px);
+    color: $grey-dark;
+    font-size: calcRem(14px);
+    
+    @include tablet {
+        color: $white;
+        
+        &:hover {
+            color: $grey-dark;
+        }
+    }
+}

@@ -1,0 +1,70 @@
+.connect {
+    position: relative;
+    background: url("../img/overlay.png");
+    text-align: center;
+    
+    &::before {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        content: "";
+        background: url("../img/bg.jpg") center center / cover no-repeat;
+        background-attachment: fixed;
+        z-index: -1;
+    }
+    
+    .title, .sub-title {
+        color: $white;
+    }
+}
+
+
+.connect-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: $white;
+    
+    .item {
+        margin: 0 calcRem(10px) calcRem(20px);
+        cursor: pointer;
+        transform: scale(0.5);
+        opacity: 0;
+        @include transition(opacity 0.5s ease-in-out, transform 0.5s ease-in-out);
+        
+        &:hover .img {
+            background: $accent;
+        }
+    }
+    
+    .img {
+        margin-bottom: calcRem(10px);
+        width: 90px;
+        height: 90px;
+        background-color: rgba(215,219,220,.3);
+        font-size: calcRem(50px);
+        line-height: 90px;
+        border-radius: 50%;
+    }
+    
+    .name, .txt {
+        font-size: calcRem(12px);
+    }
+    
+    @include desktop {
+        .item {
+            margin: 0 calcRem(20px);
+        }
+        
+        .name, .txt {
+            font-size: calcRem(14px);
+        }
+    }
+}
+
+.activate .connect-container .item {
+    transform: scale(1);
+    opacity: 1;
+}

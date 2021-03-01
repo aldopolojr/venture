@@ -1,0 +1,83 @@
+.team-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+    .item {
+        margin-bottom: calcRem(25px);
+        width: 200px;
+        text-align: center;
+        transform: translateX(50px);
+        opacity: 0;
+        @include transition(opacity 0.5s ease-in-out, transform 0.5s ease-in-out);
+    }
+    
+    img {
+        margin: 0 0 calcRem(20px);
+        width: 50%;
+        vertical-align: bottom;
+        border-radius: 50%;
+    }
+    
+    .name {
+        margin-bottom: calcRem(5px);
+        font-size: calcRem(14px);
+    }
+    
+    .job-title {
+        margin-bottom: calcRem(10px);
+        font-size: calcRem(12px);
+    }
+    
+    .links a {
+        display: inline-block;
+        margin: 0 calcRem(2px);
+        width: 32px;
+        height: 32px;
+        color: $grey-dark;
+        line-height: 32px;
+        border: 1px solid $grey-dark;
+        border-radius: 50%;
+        
+        &:hover {
+            background: $accent;
+            color: $white;
+            border-color: $accent;
+        }
+    }
+    
+    @include desktop {        
+        .item {
+            width: 250px;
+        }
+        
+        img {
+            width: 55%;
+        }
+    }
+    
+    @include desktop {
+        .item {
+            width: 25%;
+        }
+        
+        img {
+            width: 60%;
+        }
+        
+        .name {
+            font-size: calcRem(18px);
+        }
+        
+        .job-title {
+            font-size: calcRem(14px);
+        }
+    }
+}
+
+.activate .team-container .item {
+    transform: translateX(0);
+    opacity: 1;
+}

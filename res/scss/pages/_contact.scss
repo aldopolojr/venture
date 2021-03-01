@@ -1,0 +1,123 @@
+.contact {
+    position: relative;
+    background: url("../img/overlay.png");
+    text-align: center;
+    
+    &::before {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        content: "";
+        background: url("../img/bg.jpg") center center / cover no-repeat;
+        background-attachment: fixed;
+        z-index: -1;
+    }
+    
+    .title, .sub-title {
+        color: $white;
+    }
+}
+
+.contact form {
+    input {
+        display: block;
+        margin-bottom: calcRem(15px);
+        padding: calcRem(10px) calcRem(16px);
+        width: 100%;
+        font-family: "open Sans", "sans-serif";
+        font-size: calcRem(18px);
+        border: 1px solid #ccc;
+        border-radius: 0;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        outline: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        -o-appearance: none;
+        appearance: none;
+        
+        &:focus {
+            border-color: #66afe9;
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+        }
+    }
+    
+    textarea {
+        display: block;
+        margin-bottom: calcRem(15px);
+        padding: calcRem(10px) calcRem(16px);
+        width: 100%;
+        min-height: 144px;
+        font-family: "open Sans", "sans-serif";
+        font-size: calcRem(18px);
+        border: 1px solid #ccc;
+        border-radius: 0;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        outline: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        -o-appearance: none;
+        appearance: none;
+        
+        &:focus {
+            border-color: #66afe9;
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+        }
+    }
+    
+    .btn {
+        display: block;
+        margin: 0 0 0 auto;
+        padding: calcRem(5px) calcRem(20px);
+        width: auto;
+        background: $white;
+        color: $black;
+        font-family: "oswald", "sans-serif";
+        border: none;
+        cursor: pointer;
+        @include transition(background 0.1s ease-in-out);
+
+        &:hover {
+            background: $accent;
+            color: $white;
+        }
+    }
+    
+    .box1 {
+        transform: translateX(-50px);
+        opacity: 0;
+        @include transition(opacity 0.5s ease-in-out, transform 0.5s ease-in-out);
+    }
+    
+    .box2 {
+        transform: translateX(50px);
+        opacity: 0;
+        @include transition(opacity 0.5s ease-in-out, transform 0.5s ease-in-out);
+    }
+    
+    @include tablet {
+        display: flex;
+        margin: 0 auto;
+        max-width: 750px;
+        
+        .box1 {
+            margin-right: 5%;
+            width: 30%;
+        }
+        .box2 {
+            flex: auto;
+        }
+        
+        textarea {
+            min-height: 168px;
+        }
+    }
+}
+
+.contact.activate .box1, .contact.activate .box2 {
+    transform: translateX(0);
+    opacity: 1;
+}

@@ -1,0 +1,55 @@
+.banner {
+    background: url("../img/bg.jpg") center center / cover no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+    
+    .banner--title {
+        margin-bottom: calcRem(20px);
+        color: $white;
+        font-size: calcRem(55px);
+        font-weight: 700;
+        text-transform: uppercase;
+        text-shadow: 0 0 2px #000;
+    }
+    
+    .banner--sub-title {
+        margin-bottom: calcRem(20px);
+        color: $white;
+        font-size: calcRem(30px);
+        font-weight: 700;
+        text-transform: uppercase;
+        text-shadow: 0 0 2px #000;
+    }
+    
+    .btn-secondary {
+        display: inline-block;
+        padding: calcRem(8px) calcRem(25px);
+        background: $accent;
+        color: $white;
+        font-size: calcRem(18px);
+        @include transition(background 0.1s ease-in-out);
+
+        &:hover {
+            background: $white;
+            color: $black;
+        }
+    }
+    
+    @include desktop {
+        padding: calcRem(150px) 0;
+        
+        .banner--title {
+            margin-bottom: calcRem(25px);
+            font-size: calcRem(70px);
+        }
+        
+        .banner--sub-title {
+            margin-bottom: calcRem(25px);
+            font-size: calcRem(40px);
+        }
+        
+        .btn-secondary {
+            font-size: calcRem(22px);
+        }
+    }
+}
