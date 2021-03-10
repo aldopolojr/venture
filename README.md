@@ -1,11 +1,12 @@
 # Venture
-This is a **slicing**, check here for the [demo](https://aldopolojr.github.io/venture/)
+
+## links
+[demo link](https://aldopolojr.github.io/venture/)
+
+[source link](https://www.nimbusthemes.com/preview/?theme=venture)
+
+## Category
+practice
 
 ## Notes
-- …
-
-## Source
-[https://www.nimbusthemes.com/preview/?theme=venture](https://www.nimbusthemes.com/preview/?theme=venture)
-
-## Tags
-#HTML #CSS #JavaScript #ResponsiveDesign #ParallaxScroll
+/
